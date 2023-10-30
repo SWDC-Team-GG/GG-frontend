@@ -7,38 +7,33 @@ export const DictMain = styled.div`
   justify-content: center;
   gap: 5rem;
   width: 100%;
-  height: 100vh;
+  margin-top: 5rem;
 `;
 
 export const SearchBox = styled.div`
   display: flex;
   align-items: center;
   width: 35%;
-  height: 5vh;
   border: 1px solid #ececec;
   border-radius: 25px;
   background-color: #fbfbfb42;
   gap: 0.5rem;
-  padding: 1rem 1rem;
+  padding: 0.75rem 1rem;
 `;
 
 export const SearchBoxInput = styled.input`
   width: 100%;
-  height: 4.5vh;
+  font-size: 1.2rem;
   border: none;
   outline: none;
-  /* margin-left: 10px; */
 `;
 
 export const SearchImg = styled.img`
   width: 4%;
-  height: 4vh;
-  /* margin-left: 10px; */
 `;
 
 export const WordArea = styled.div`
-  width: 70%;
-  height: 50vh;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,10 +42,10 @@ export const WordArea = styled.div`
 `;
 
 export const WordBox = styled.div`
-  width: 70%;
-  height: 25%;
+  width: 100%;
+  padding: 1% 0;
   background: #ccc;
-  border-radius: 10px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   border: 1px solid #e6e6e6;
@@ -59,33 +54,27 @@ export const WordBox = styled.div`
 
 export const WordBoxBwSw = styled.div`
   display: flex;
+  align-items: center;
   padding: 1rem 1rem;
-  font-size: 21px;
+  font-size: 1.3rem;
   font-weight: bold;
   gap: 0.5rem;
 `;
 
 export const Blue = styled.span`
   color: #3084f2;
-  font-weight: bold;
 `;
 
 export const SimilarWord = styled.span`
   color: #3084f2;
   background-color: #e6e6e6;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 1.1rem;
+  font-weight: 400;
 `;
 
 export const WordBoxMean = styled.div`
   padding-bottom: 1rem;
   padding-left: 1rem;
-  font-size: 15px;
-  font-weight: lighter;
-`;
-
-export const Example = styled.div`
-  color: #55f;
-  font-size: 10px;
 `;

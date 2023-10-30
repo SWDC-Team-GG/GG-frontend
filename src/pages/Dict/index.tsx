@@ -1,6 +1,6 @@
 import React from "react";
+import search from "assets/search.svg";
 import * as S from "./style";
-import search from "../../assets/search.svg";
 
 function Dict() {
   const data = [

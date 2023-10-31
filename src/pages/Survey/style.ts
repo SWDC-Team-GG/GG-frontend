@@ -1,39 +1,55 @@
 import styled from "styled-components";
 
-export const CheckLabel = styled.div`
-  display: block;
-  font-size: 20px;
-  margin-top: 30px;
+export const Layout = styled.div`
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const Input = styled.input`
-  margin-right: 10px;
-  width: 16px;
-  height: 16px;
-  border-radius: 24px;
-`;
-
-export const SubTitle = styled.div`
-  text-align: center;
-  font-size: 16px;
-  margin: 30px 0px 5px 0px;
+export const SurveyBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  height: 80%;
+  border-radius: 25px;
+  padding: 2rem;
+  gap: 1rem;
+  border: 1px solid black;
 `;
 
 export const Title = styled.div`
-  text-align: center;
-  font-size: 27px;
-  font-weight: 900;
-  margin-bottom: 60px;
+  font-size: 1.2rem;
+  font-weight: bold;
 `;
 
-export const DescTitle = styled(Title)`
-  text-align: left;
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 20px;
+export const Form = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 90%;
+  margin-top: 5%;
+  gap: 2rem;
 `;
 
-export const Container = styled.div`
-  width: 370px;
-  margin: 0 auto;
+export const RadioBox = styled.input`
+  width: 1rem;
+`;
+
+export const AfterButton = styled.div`
+  position: absolute;
+  top: 70%;
+  background-color: #314fdd;
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  color: white;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
 `;

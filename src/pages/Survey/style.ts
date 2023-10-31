@@ -1,30 +1,46 @@
 import styled from "styled-components";
 
-export const ROOT = styled.div`
+export const Layout = styled.div`
   display: flex;
+  width: 100%;
+  height: 80vh;
+  align-items: center;
   justify-content: center;
 `;
 
-export const Container = styled.div`
-  width: 60%;
-  height: 50%;
-  margin-top: 60px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  padding: 0 40px 40px 40px;
+export const Form = styled.div`
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
+export const SurveyBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  border-radius: 25px;
+  padding: 2rem;
 `;
 
 export const PageNumber = styled.div`
   text-align: center;
   font-size: 1rem;
-  margin: 20px 0px 5px 0px;
 `;
 
 export const Title = styled.div`
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 900;
   margin-bottom: 60px;
+`;
+
+export const Line = styled.div`
+  height: 2px;
+  width: 100%;
+  background-color: black;
 `;
 
 export const SurveyContents = styled(Title)`
@@ -35,16 +51,12 @@ export const SurveyContents = styled(Title)`
 `;
 
 export const RadioLabel = styled.div`
-  display: block;
   font-size: 16px;
   margin-top: 30px;
 `;
 
 export const RadioBox = styled.input`
-  margin-right: 10px;
-  width: 14px;
-  height: 14px;
-  border-radius: 24px;
+  width: 1rem;
 `;
 
 export const BeforeButton = styled.button`
@@ -66,6 +78,7 @@ export const AfterButton = styled(BeforeButton)`
 
 export const ButtonContainer = styled.div`
   display: flex;
+  width: 90%;
   margin-top: 50px;
   justify-content: space-between;
 `;

@@ -17,18 +17,35 @@ export const Header = styled.div`
       display: none;
     }
   }
+  gap: 2rem;
 `;
 
 export const Title = styled.p`
   color: #3084f2;
   font-weight: 400;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 `;
 
 export const NavTitle = styled(Title)`
-  padding-left: 30px;
   @media screen and (max-width: 500px) {
     display: none;
   }
+`;
+export const Logo = styled.div`
+  color: #3084f2;
+  font-size: 1.5rem;
+  font-weight: 900;
+`;
+
+export const LogoImg = styled.img`
+  width: 100%;
+  height: 5vh;
+`;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 `;

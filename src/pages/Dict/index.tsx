@@ -1,14 +1,16 @@
 import React from "react";
 import search from "assets/search.svg";
+import Word from "components/Word";
+import IWordprops from "interfaces/IWordprops";
 import * as S from "./style";
 
 function Dict() {
-  const data = [
+  const data: IWordprops[] = [
     {
       id: 1,
       pos: "명사",
       beforeWord: "미망인",
-      similarWord: ["과부", "wkflaf", "wdijad"],
+      similarWord: ["과부"],
       mean: "남편이 죽고 배우자 없이 홀로 사는 여자",
     },
     {
@@ -22,7 +24,7 @@ function Dict() {
       id: 3,
       pos: "명사",
       beforeWord: "나흘",
-      similarWord: ["4일", "wkflaf", "wdijad"],
+      similarWord: ["4일", "배고파"],
       mean: "하루가 네 번 있는 시간의 길이. 곧, 네 날",
     },
   ];
@@ -30,24 +32,11 @@ function Dict() {
     <S.DictMain>
       <S.SearchBox>
         <S.SearchImg src={search} />
-        <S.SearchBoxInput />
+        <S.SearchBoxInput placeholder="Search" />
       </S.SearchBox>
       <S.WordArea>
         {data.map((item) => (
-          <S.WordBox>
-            <S.Example />
-            <S.WordBoxBwSw>
-              {item.beforeWord}
-              {"  "}
-              {item.similarWord.map((word) => (
-                <S.SimilarWord>{word}</S.SimilarWord>
-              ))}
-            </S.WordBoxBwSw>
-            <S.WordBoxMean>
-              {"1. "}
-              <S.Blue>{item.pos}</S.Blue> {item.mean}
-            </S.WordBoxMean>
-          </S.WordBox>
+          <Word item={item} />
         ))}
       </S.WordArea>
     </S.DictMain>

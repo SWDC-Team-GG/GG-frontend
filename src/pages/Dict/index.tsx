@@ -1,9 +1,11 @@
 import React from "react";
 import search from "assets/search.svg";
+import Word from "components/Word";
+import IWordprops from "interfaces/IWordprops";
 import * as S from "./style";
 
 function Dict() {
-  const data = [
+  const data: IWordprops[] = [
     {
       id: 1,
       pos: "명사",
@@ -34,17 +36,7 @@ function Dict() {
       </S.SearchBox>
       <S.WordArea>
         {data.map((item) => (
-          <S.WordBox>
-            <S.WordBoxBwSw>
-              {item.beforeWord}
-              {item.similarWord.map((word) => (
-                <S.SimilarWord>{word}</S.SimilarWord>
-              ))}
-            </S.WordBoxBwSw>
-            <S.WordBoxMean>
-              <S.Blue>{item.pos}</S.Blue> {item.mean}
-            </S.WordBoxMean>
-          </S.WordBox>
+          <Word item={item} />
         ))}
       </S.WordArea>
     </S.DictMain>

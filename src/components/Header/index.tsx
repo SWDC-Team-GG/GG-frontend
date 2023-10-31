@@ -1,7 +1,7 @@
 import { VscArrowLeft } from "react-icons/vsc";
 import React from "react";
+import Logo from "assets/logo.svg";
 import * as S from "./style";
-import Logo from "../../../assets/logo.svg";
 
 function Header() {
   return (

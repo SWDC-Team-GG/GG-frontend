@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "components/section/Header";
-import Footer from "components/section/Footer";
+import Header from "components/Header";
 import Home from "pages/Home";
 import Quiz from "pages/Quiz";
 import Dict from "pages/Dict";
@@ -18,7 +17,6 @@ function App() {
           <Route path="/survey" element={<Survey />} />
         </Routes>
       </Router>
-      <Footer />
     </>
   );
 }

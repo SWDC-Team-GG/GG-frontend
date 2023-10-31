@@ -5,7 +5,7 @@ function Home() {
   const exp = ["초등학교", "중학교", "고등학교"];
   return (
     <S.Container>
-      <S.SubTitle>2 / 2</S.SubTitle>
+      <S.SubTitle>1 / 2</S.SubTitle>
       <S.Title>해당하는 사항에 체크해주세요</S.Title>
       <form method="get" action="form-action.html">
         <S.DescTitle>자신의 학력</S.DescTitle>

@@ -8,77 +8,48 @@ export const Layout = styled.div`
   justify-content: center;
 `;
 
-export const Form = styled.div`
-  display: flex;
-  width: 90%;
-  flex-direction: column;
-  justify-content: flex-start;
-`;
-
 export const SurveyBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 35%;
+  height: 80%;
   border-radius: 25px;
   padding: 2rem;
-`;
-
-export const PageNumber = styled.div`
-  text-align: center;
-  font-size: 1rem;
+  gap: 1rem;
+  border: 1px solid black;
 `;
 
 export const Title = styled.div`
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 900;
-  margin-bottom: 60px;
-`;
-
-export const Line = styled.div`
-  height: 2px;
-  width: 100%;
-  background-color: black;
-`;
-
-export const SurveyContents = styled(Title)`
-  text-align: left;
   font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-weight: bold;
 `;
 
-export const RadioLabel = styled.div`
-  font-size: 16px;
-  margin-top: 30px;
+export const Form = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 90%;
+  margin-top: 5%;
+  gap: 2rem;
 `;
 
 export const RadioBox = styled.input`
   width: 1rem;
 `;
 
-export const BeforeButton = styled.button`
-  width: 30%;
-  background-color: lightgray;
+export const AfterButton = styled.div`
+  position: absolute;
+  top: 70%;
+  background-color: #314fdd;
   border: none;
-  padding: 20px 0;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
   color: white;
-`;
-
-export const AfterButton = styled(BeforeButton)`
-  width: 66%;
-  background-color: #3084f2;
-  border-radius: 8px;
-  font-size: 1rem;
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
-  width: 90%;
-  margin-top: 50px;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: center;
 `;

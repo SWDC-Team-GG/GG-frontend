@@ -5,9 +5,9 @@ export const QuizBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 2rem;
   width: 100%;
-  height: 100vh;
+  height: 88vh;
 `;
 
 export const TitleBox = styled.div`
@@ -15,30 +15,29 @@ export const TitleBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 `;
 
 export const SmallTitle = styled.span`
-  font-size: 17px;
-  color: #000000;
-  font-weight: bold;
+  color: #999;
+  letter-spacing: -1px;
 `;
 
 export const MainTitle = styled.p`
   font-size: 30px;
-  color: #004ce0;
-  font-weight: bold;
+  color: #3084f2;
+  letter-spacing: -1px;
 `;
 
 export const Line = styled.div`
-  width: 5%;
-  height: 0.5%;
-  background-color: #3084f2;
+  width: 2rem;
+  height: 2.5px;
+  background-color: #3195dd;
 `;
 
 export const SelectArea = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-direction: column;
   justify-content: center;
 `;

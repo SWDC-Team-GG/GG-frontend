@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { postLogin } from "api/allPosts";
+import { login } from "api/allPosts";
 import * as S from "./style";
 
 function Login() {
@@ -17,9 +17,9 @@ function Login() {
       return toast.error("아이디와 비밀번호를 입력해주세요!");
     }
     try {
-      await postLogin(userId, password);
-      navigate("/");
-      return toast.success("로그인에 성공하였습니다!");
+      await login(userId, password);
+      toast.success("로그인에 성공하였습니다!");
+      return navigate("/");
     } catch {
       return toast.error("알 수 없는 에러가 발생하였습니다!");
     }

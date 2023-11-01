@@ -15,7 +15,7 @@ function Header() {
       </S.NavigationBox>
       <S.AccountBox>
         <S.Navigation to="/login">로그인</S.Navigation>
-        <S.Navigation to="/register">회원가입</S.Navigation>
+        <S.Navigation to="/signin">회원가입</S.Navigation>
       </S.AccountBox>
     </S.Layout>
   );

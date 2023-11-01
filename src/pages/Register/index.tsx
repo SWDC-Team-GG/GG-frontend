@@ -1,16 +1,18 @@
+import { useState } from "react";
 import logo from "assets/logo.svg";
 import * as S from "./style";
 
-function Login() {
+function Register() {
   return (
     <S.Layout>
       <S.Logo src={logo} />
       <S.LogoText>readable</S.LogoText>
       <S.Input placeholder="아이디" />
+      <S.Input placeholder="닉네임" />
       <S.Input type="password" placeholder="비밀번호" />
-      <S.Login>로그인</S.Login>
+      <S.Register>회원가입</S.Register>
     </S.Layout>
   );
 }
 
-export default Login;
+export default Register;

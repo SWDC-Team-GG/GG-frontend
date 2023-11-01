@@ -1,13 +1,13 @@
 import customAxios from "libs/customAxios";
 
 const getUser = async () => {
-  const res = await customAxios.get("/");
-  return res;
+  const { data } = await customAxios.get("/");
+  return data;
 };
 
-const logout = async () => {
-  const res = await customAxios.get("/logout");
-  return res;
+const getLogout = async () => {
+  const { data } = await customAxios.get("/logout");
+  return data;
 };
 
-export { getUser, logout };
+export { getUser, getLogout };

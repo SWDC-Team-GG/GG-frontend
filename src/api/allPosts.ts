@@ -1,18 +1,20 @@
 import customAxios from "libs/customAxios";
 
 const login = async (userId: string, password: string) => {
-  await customAxios.post("/login", {
+  const { data } = await customAxios.post("/login", {
     userId,
     password,
   });
+  return data;
 };
 
 const signIn = async (userId: string, name: string, password: string) => {
-  await customAxios.post("/signin", {
+  const { data } = await customAxios.post("/signin", {
     userId,
     name,
     password,
   });
+  return data;
 };
 
 export { login, signIn };

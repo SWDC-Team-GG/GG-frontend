@@ -29,9 +29,10 @@ export const Input = styled.input`
 `;
 
 export const Login = styled.button`
+  font-size: 1.1rem;
   border-radius: 5px;
-  padding: 1rem 2rem;
+  padding: 1rem 1.75rem;
   border: none;
-  background-color: #314fdd;
+  background-color: #3084f2;
   color: white;
 `;

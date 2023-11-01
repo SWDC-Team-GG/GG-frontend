@@ -30,11 +30,15 @@ function Dict() {
   ];
   return (
     <S.DictMain>
+      <S.MainText>
+        <S.Blue>단어</S.Blue>사전
+      </S.MainText>
       <S.SearchBox>
         <S.SearchImg src={search} />
         <S.SearchBoxInput placeholder="Search" />
       </S.SearchBox>
       <S.WordArea>
+        <S.RecentText>검색기록</S.RecentText>
         {data.map((item) => (
           <Word item={item} />
         ))}

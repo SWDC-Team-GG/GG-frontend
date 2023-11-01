@@ -7,7 +7,7 @@ function Login() {
       <S.Logo src={logo} />
       <S.LogoText>readable</S.LogoText>
       <S.Input placeholder="아이디" />
-      <S.Input placeholder="비밀번호" />
+      <S.Input type="password" placeholder="비밀번호" />
       <S.Login>로그인</S.Login>
     </S.Layout>
   );

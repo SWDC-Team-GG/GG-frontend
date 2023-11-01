@@ -1,4 +1,3 @@
-import { useState } from "react";
 import logo from "assets/logo.svg";
 import * as S from "./style";
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { login } from "api/allPosts";
+import { AxiosError } from "axios";
 import * as S from "./style";
 
 function Login() {
@@ -17,10 +18,14 @@ function Login() {
       return toast.error("아이디와 비밀번호를 입력해주세요!");
     }
     try {
-      await login(userId, password);
-      toast.success("로그인에 성공하였습니다!");
-      return navigate("/");
-    } catch {
+      const data = await login(userId, password);
+      navigate("/");
+      return toast.success(`${data}`);
+    } catch (err) {
+      const axiosError = err as AxiosError;
+      if (err && axiosError.response) {
+        return toast.error(`${axiosError.response.data}`);
+      }
       return toast.error("알 수 없는 에러가 발생하였습니다!");
     }
   };

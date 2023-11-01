@@ -49,15 +49,6 @@ function Home() {
     textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
   };
 
-  const handleUser = async () => {
-    try {
-      const res = await getUser();
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   return (
     <S.Layout>
       <S.Container>
@@ -95,9 +86,6 @@ function Home() {
             <Word item={item} key={item.id} />
           ))}
         </S.WordBox>
-        <button type="button" onClick={handleUser}>
-          내정보확인
-        </button>
       </S.Container>
     </S.Layout>
   );

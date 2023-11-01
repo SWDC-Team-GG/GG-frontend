@@ -4,6 +4,7 @@ import Home from "pages/Home";
 import Quiz from "pages/Quiz";
 import Dict from "pages/Dict";
 import Survey from "pages/Survey";
+import Login from "pages/Login";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/dict" element={<Dict />} />
-        <Route path="/Survey" element={<Survey />} />
+        <Route path="/survey" element={<Survey />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

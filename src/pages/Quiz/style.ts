@@ -37,7 +37,7 @@ export const Line = styled.div`
 
 export const SelectArea = styled.div`
   display: flex;
-  gap: 0.75rem;
+  gap: 0.7rem;
   flex-direction: column;
   justify-content: center;
 `;

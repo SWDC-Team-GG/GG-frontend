@@ -14,8 +14,8 @@ function Header() {
         <S.Navigation to="/dict">검색기록&사전</S.Navigation>
       </S.NavigationBox>
       <S.AccountBox>
-        <S.Account>회원가입</S.Account>
-        <S.Account>로그인</S.Account>
+        <S.Navigation to="/login">로그인</S.Navigation>
+        <S.Navigation to="/register">회원가입</S.Navigation>
       </S.AccountBox>
     </S.Layout>
   );

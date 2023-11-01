@@ -13,6 +13,7 @@ export const LogoBox = styled(Link)`
   width: 15%;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
 `;
 
@@ -39,8 +40,4 @@ export const Navigation = styled(Link)`
 export const AccountBox = styled.div`
   display: flex;
   gap: 2rem;
-`;
-
-export const Account = styled.div`
-  cursor: pointer;
 `;

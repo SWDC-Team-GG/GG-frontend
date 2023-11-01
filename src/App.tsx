@@ -8,9 +8,6 @@ import Login from "pages/Login";
 import SignIn from "pages/SignIn";
 
 function App() {
-  document.cookie = "safeCookie1=foo; SameSite=Lax";
-  document.cookie = "safeCookie2=foo";
-  document.cookie = "crossCookie=bar; SameSite=None; Secure";
   return (
     <Router>
       <Header />

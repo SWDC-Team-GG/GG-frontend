@@ -23,7 +23,11 @@ function Home() {
         <S.Form>
           {data[page].option.map((item) => (
             <label>
-              <S.RadioBox type="radio" name={data[page].name} value={item} />{" "}
+              <S.RadioBox
+                type={page === 0 ? "checkbox" : "radio"}
+                name={data[page].name}
+                value={item}
+              />{" "}
               {item}
             </label>
           ))}

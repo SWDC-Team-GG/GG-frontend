@@ -29,14 +29,27 @@ export const Title = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-top: 2.5rem;
   width: 100%;
   gap: 2rem;
 `;
 
+export const QuestionBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const RadioBox = styled.input`
   width: 1rem;
+`;
+
+export const InputNumber = styled.input`
+  width: 2.5rem;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 0.3rem;
 `;
 
 export const ButtonBox = styled.div`

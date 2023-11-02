@@ -3,6 +3,8 @@ import * as S from "./style";
 
 function Home() {
   const [page, setPage] = useState(0);
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
+  const [inputValues, setInputValues] = useState<Record<string, number>>({});
   const data = [
     {
       question: "최종학력이 어떻게 되세요?",
@@ -22,14 +24,40 @@ function Home() {
         <S.Title>{data[page].question}</S.Title>
         <S.Form>
           {data[page].option.map((item) => (
-            <label>
-              <S.RadioBox
-                type={page === 0 ? "checkbox" : "radio"}
-                name={data[page].name}
-                value={item}
-              />{" "}
-              {item}
-            </label>
+            <S.QuestionBox>
+              <label>
+                <S.RadioBox
+                  type={page === 1 ? "checkbox" : "radio"}
+                  name={data[page].name}
+                  value={item}
+                  onChange={(e) => {
+                    setCheckedItems({
+                      ...checkedItems,
+                      [e.target.value]: e.target.checked,
+                    });
+                    setInputValues({
+                      ...inputValues,
+                      [e.target.value]: Number(0),
+                    });
+                  }}
+                />{" "}
+                {item}
+              </label>
+              <S.InputNumber
+                type="number"
+                name={item}
+                value={inputValues[item] || 0}
+                style={{ opacity: checkedItems[item] && page === 1 ? 1 : 0 }}
+                min={1}
+                max={10}
+                onChange={(e) =>
+                  setInputValues({
+                    ...inputValues,
+                    [e.target.name]: Number(e.target.value),
+                  })
+                }
+              />
+            </S.QuestionBox>
           ))}
           <S.ButtonBox>
             {page + 1 === data.length ? (

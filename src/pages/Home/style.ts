@@ -57,6 +57,11 @@ export const ButtomNavBox = styled.div`
   border-top: 1px solid #ddd;
 `;
 
+export const Addons = styled.div`
+  display: flex;
+  height: 100%;
+`;
+
 export const ButtomNav = styled.div`
   display: flex;
   justify-content: center;

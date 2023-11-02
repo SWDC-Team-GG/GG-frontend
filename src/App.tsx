@@ -5,7 +5,7 @@ import Quiz from "pages/Quiz";
 import Dict from "pages/Dict";
 import Survey from "pages/Survey";
 import Login from "pages/Login";
-import Register from "pages/Register";
+import SignIn from "pages/SignIn";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/dict" element={<Dict />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
     </Router>
   );

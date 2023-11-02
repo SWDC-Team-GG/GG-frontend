@@ -34,6 +34,7 @@ export const SearchBoxInput = styled.input`
   width: 100%;
   font-size: 1.2rem;
   border: none;
+  background-color: #fbfbfb;
   outline: none;
 `;
 

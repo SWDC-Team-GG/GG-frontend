@@ -23,7 +23,6 @@ function Home() {
         <div>{page + 1} / 2</div>
         <S.Title>{data[page].question}</S.Title>
         <S.Form>
-          <div>{JSON.stringify(inputValues)}</div>
           {data[page].option.map((item) => (
             <S.QuestionBox>
               <label>

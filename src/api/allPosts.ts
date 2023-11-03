@@ -1,5 +1,6 @@
 import { ITranslateWord } from "interfaces/ITranslateWord";
 import backendAxios from "libs/backendAxios";
+import { getLevel } from "./allGets";
 
 const login = async (userId: string, password: string) => {
   const { data } = await backendAxios.post("/login", {
@@ -28,4 +29,13 @@ const search = async (words: ITranslateWord[]) => {
   return data;
 };
 
-export { login, signIn, userInfo, search };
+const getTranslate = async (text: string) => {
+  const { education, field } = await getLevel();
+  const { data } = await backendAxios.post(
+    `${process.env.REACT_APP_FLASK_BASE_URL}/translate`,
+    { text, education, field },
+  );
+  return data;
+};
+
+export { login, signIn, userInfo, search, getTranslate };

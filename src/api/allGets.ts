@@ -16,10 +16,8 @@ const getSurvey = async () => {
   return data;
 };
 
-const getTranslate = async (text: string) => {
-  const { data } = await axios.get(
-    `${process.env.REACT_APP_FLASK_BASE_URL}/translate?text=${text}`,
-  );
+const getLevel = async () => {
+  const { data } = await backendAxios.get("/level");
   return data;
 };
 
@@ -28,4 +26,4 @@ const getSearch = async () => {
   return data;
 };
 
-export { getUser, getLogout, getSurvey, getTranslate, getSearch };
+export { getUser, getLogout, getSurvey, getLevel, getSearch };

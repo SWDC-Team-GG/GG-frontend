@@ -1,7 +1,7 @@
-import customAxios from "libs/customAxios";
+import backendAxios from "libs/backendAxios";
 
 const login = async (userId: string, password: string) => {
-  const { data } = await customAxios.post("/login", {
+  const { data } = await backendAxios.post("/login", {
     userId,
     password,
   });
@@ -9,7 +9,7 @@ const login = async (userId: string, password: string) => {
 };
 
 const signIn = async (userId: string, name: string, password: string) => {
-  const { data } = await customAxios.post("/signin", {
+  const { data } = await backendAxios.post("/signin", {
     userId,
     name,
     password,
@@ -17,4 +17,9 @@ const signIn = async (userId: string, name: string, password: string) => {
   return data;
 };
 
-export { login, signIn };
+const userInfo = async (education: number, field: number) => {
+  const { data } = await backendAxios.post("/level", { education, field });
+  return data;
+};
+
+export { login, signIn, userInfo };

@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import IWordprops from "interfaces/IWordprops";
 import Word from "components/Word";
-import camera from "assets/camera.png";
 import copy from "assets/copy.png";
 import { ToastContainer, toast } from "react-toastify";
 import * as S from "./style";
@@ -83,9 +82,6 @@ function Home() {
                     onClick={() => handleCopy(textareaRef.current?.value)}
                   >
                     <S.Img src={copy} />
-                  </S.ButtomNav>
-                  <S.ButtomNav>
-                    <S.Img src={camera} />
                   </S.ButtomNav>
                 </S.Addons>
                 <S.TranslateButton>번역하기</S.TranslateButton>

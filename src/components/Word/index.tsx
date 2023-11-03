@@ -1,18 +1,16 @@
 import React from "react";
-import IWordprops from "interfaces/IWordprops";
+import { ITranslateWord } from "interfaces/ITranslateWord";
 import * as S from "./style";
 
-function Word({ item }: { item: IWordprops }) {
+function Word({ word }: { word: ITranslateWord }) {
   return (
     <S.WordBox>
       <S.WordBoxBwSw>
-        {item.beforeWord}
-        {item.similarWord.map((word) => (
-          <S.SimilarWord>{word}</S.SimilarWord>
-        ))}
+        {word.plainword}
+        <S.SimilarWord>{word.translateWord}</S.SimilarWord>
       </S.WordBoxBwSw>
       <S.WordBoxMean>
-        <S.Blue>{item.pos}</S.Blue> {item.mean}
+        <S.Blue>{word.part}</S.Blue> {word.meaning}
       </S.WordBoxMean>
     </S.WordBox>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import search from "assets/search.svg";
 import Word from "components/Word";
-import IWordprops from "interfaces/IWordprops";
+import { ITranslateWord } from "interfaces/ITranslateWord";
 import * as S from "./style";
 
 function Dict() {
-  const data: IWordprops[] = [
+  const data = [
     {
       id: 1,
       pos: "명사",
@@ -39,9 +39,9 @@ function Dict() {
       </S.SearchBox>
       <S.WordArea>
         <S.RecentText>검색기록</S.RecentText>
-        {data.map((item) => (
+        {/* {data.map((item) => (
           <Word item={item} />
-        ))}
+        ))} */}
       </S.WordArea>
     </S.DictMain>
   );

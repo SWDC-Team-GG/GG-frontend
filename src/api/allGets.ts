@@ -16,9 +16,9 @@ const getSurvey = async () => {
   return data;
 };
 
-const getTranslate = async () => {
+const getTranslate = async (text: string) => {
   const { data } = await axios.get(
-    `${process.env.REACT_APP_FLASK_BASE_URL}/translate`,
+    `${process.env.REACT_APP_FLASK_BASE_URL}/translate?text=${text}`,
   );
   return data;
 };

@@ -1,47 +1,17 @@
-import React, { useRef } from "react";
-import IWordprops from "interfaces/IWordprops";
+import React, { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import useUser from "hooks/useUser";
+import { getTranslate } from "api/allGets";
+import { ITranslateWord, ITranslate } from "interfaces/ITranslateWord";
 import Word from "components/Word";
 import copy from "assets/copy.png";
-import { ToastContainer, toast } from "react-toastify";
 import * as S from "./style";
 
 function Home() {
+  const { user, isLogined } = useUser();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  const { translateText, data }: { translateText: string; data: IWordprops[] } =
-    {
-      translateText: "깊은 사과의 말씀 드립니다.",
-      data: [
-        {
-          id: 1,
-          pos: "명사",
-          beforeWord: "미망인",
-          similarWord: ["과부"],
-          mean: "남편이 죽고 배우자 없이 홀로 사는 여자",
-        },
-        {
-          id: 2,
-          pos: "명사",
-          beforeWord: "금일",
-          similarWord: ["오늘", "wkflaf", "wdijad"],
-          mean: "지금 지나가고 있는 이날",
-        },
-        {
-          id: 3,
-          pos: "명사",
-          beforeWord: "나흘",
-          similarWord: ["4일", "배고파"],
-          mean: "하루가 네 번 있는 시간의 길이. 곧, 네 날",
-        },
-        {
-          id: 4,
-          pos: "명사",
-          beforeWord: "나흘",
-          similarWord: ["4일", "배고파"],
-          mean: "하루가 네 번 있는 시간의 길이. 곧, 네 날",
-        },
-      ],
-    };
+  const [translateText, setTranslateText] = useState("");
+  const [translateWords, setTranslateWords] = useState<ITranslateWord[]>([]);
 
   const handleTextareaHeight = () => {
     if (!textareaRef.current) return;
@@ -51,13 +21,29 @@ function Home() {
 
   const handleCopy = async (text: string | undefined) => {
     if (typeof text === "undefined") {
-      return toast.error("텍스트가 없습니다!");
+      return toast.error("텍스트가 없습니다");
     }
     try {
       await navigator.clipboard.writeText(text);
       return toast.success("복사되었습니다");
     } catch {
       return toast.error("복사 실패");
+    }
+  };
+
+  const handleTranslate = async () => {
+    try {
+      if (!isLogined) {
+        return toast.error("로그인 후 이용 가능한 서비스입니다");
+      }
+      if (textareaRef.current === null) {
+        return toast.error("텍스트 영역이 없습니다");
+      }
+      const data: ITranslate = await getTranslate(textareaRef.current.value);
+      setTranslateText(data.translateText);
+      setTranslateWords(data.translateWords);
+    } catch {
+      return toast.error("에러가 발생하였습니다");
     }
   };
 
@@ -84,7 +70,9 @@ function Home() {
                     <S.Img src={copy} />
                   </S.ButtomNav>
                 </S.Addons>
-                <S.TranslateButton>번역하기</S.TranslateButton>
+                <S.TranslateButton onClick={handleTranslate}>
+                  번역하기
+                </S.TranslateButton>
               </S.ButtomNavBox>
             </S.InputBox>
             <S.InputBox>
@@ -99,8 +87,8 @@ function Home() {
           </S.TranslateBox>
           <S.Line />
           <S.WordBox>
-            {data.map((item) => (
-              <Word item={item} key={item.id} />
+            {translateWords.map((word) => (
+              <Word word={word} />
             ))}
           </S.WordBox>
         </S.Container>

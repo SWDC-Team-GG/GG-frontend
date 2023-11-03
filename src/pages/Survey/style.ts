@@ -40,7 +40,7 @@ export const QuestionBox = styled.div`
   justify-content: space-between;
 `;
 
-export const RadioBox = styled.input`
+export const OptionBox = styled.input`
   width: 1rem;
 `;
 

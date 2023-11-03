@@ -1,3 +1,4 @@
+import { ITranslateWord } from "interfaces/ITranslateWord";
 import backendAxios from "libs/backendAxios";
 
 const login = async (userId: string, password: string) => {
@@ -22,4 +23,9 @@ const userInfo = async (education: number, field: number) => {
   return data;
 };
 
-export { login, signIn, userInfo };
+const search = async (words: ITranslateWord[]) => {
+  const { data } = await backendAxios.post("/search", words);
+  return data;
+};
+
+export { login, signIn, userInfo, search };

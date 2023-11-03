@@ -3,11 +3,11 @@ import { ToastContainer, toast } from "react-toastify";
 import { BeatLoader } from "react-spinners";
 import useUser from "hooks/useUser";
 import { getTranslate } from "api/allGets";
+import { search } from "api/allPosts";
 import { ITranslateWord, ITranslate } from "interfaces/ITranslateWord";
 import Word from "components/Word";
 import copy from "assets/copy.png";
 import * as S from "./style";
-import { search } from "api/allPosts";
 
 function Home() {
   const { isLogined } = useUser();
@@ -44,6 +44,10 @@ function Home() {
       }
       setIsLoding(true);
       const data: ITranslate = await getTranslate(textareaRef.current.value);
+      if (data.translateWords === null) {
+        setIsLoding(false);
+        return setTranslateText(data.translateText);
+      }
       await search(data.translateWords);
       setIsLoding(false);
       setTranslateText(data.translateText);

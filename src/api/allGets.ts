@@ -23,4 +23,9 @@ const getTranslate = async (text: string) => {
   return data;
 };
 
-export { getUser, getLogout, getSurvey, getTranslate };
+const getSearch = async () => {
+  const { data } = await backendAxios.get("/search");
+  return data;
+};
+
+export { getUser, getLogout, getSurvey, getTranslate, getSearch };

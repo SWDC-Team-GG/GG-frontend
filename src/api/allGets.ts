@@ -1,5 +1,5 @@
-import axios from "axios";
 import backendAxios from "libs/backendAxios";
+import axios from "axios";
 
 const getUser = async () => {
   const { data } = await backendAxios.get("/");
@@ -21,9 +21,17 @@ const getLevel = async () => {
   return data;
 };
 
+const getTranslate = async (text: string) => {
+  const { education, field } = await getLevel();
+  const { data } = await axios.get(
+    `${process.env.REACT_APP_FLASK_BASE_URL}/translate?text=${text}&education=${education}&field=${field}`,
+  );
+  return data;
+};
+
 const getSearch = async () => {
   const { data } = await backendAxios.get("/search");
   return data;
 };
 
-export { getUser, getLogout, getSurvey, getLevel, getSearch };
+export { getUser, getLogout, getSurvey, getSearch, getTranslate };

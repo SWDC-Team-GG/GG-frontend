@@ -6,7 +6,7 @@ function Word({ word }: { word: ITranslateWord }) {
   return (
     <S.WordBox>
       <S.WordBoxBwSw>
-        {word.plainword}
+        {word.plainWord}
         <S.SimilarWord>{word.translateWord}</S.SimilarWord>
       </S.WordBoxBwSw>
       <S.WordBoxMean>

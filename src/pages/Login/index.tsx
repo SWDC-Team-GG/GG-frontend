@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { login } from "api/allPosts";
+import { getSurvey } from "api/allGets";
 import { AxiosError } from "axios";
 import * as S from "./style";
 
@@ -19,7 +20,12 @@ function Login() {
     }
     try {
       const data = await login(userId, password);
-      navigate("/");
+      const isSurveyed = await getSurvey();
+      if (!isSurveyed) {
+        navigate("/survey");
+      } else {
+        navigate("/");
+      }
       return toast.success(`${data}`);
     } catch (err) {
       const axiosError = err as AxiosError;

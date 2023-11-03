@@ -48,6 +48,14 @@ export const TextBox = styled.div`
   letter-spacing: 1px;
 `;
 
+export const Loading = styled.div`
+  padding: 1.5rem 1rem;
+  min-height: 17.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ButtomNavBox = styled.div`
   display: flex;
   align-items: center;

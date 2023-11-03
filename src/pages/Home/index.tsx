@@ -1,17 +1,20 @@
 import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { BeatLoader } from "react-spinners";
 import useUser from "hooks/useUser";
 import { getTranslate } from "api/allGets";
 import { ITranslateWord, ITranslate } from "interfaces/ITranslateWord";
 import Word from "components/Word";
 import copy from "assets/copy.png";
 import * as S from "./style";
+import { search } from "api/allPosts";
 
 function Home() {
-  const { user, isLogined } = useUser();
+  const { isLogined } = useUser();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [translateText, setTranslateText] = useState("");
   const [translateWords, setTranslateWords] = useState<ITranslateWord[]>([]);
+  const [isLoading, setIsLoding] = useState(false);
 
   const handleTextareaHeight = () => {
     if (!textareaRef.current) return;
@@ -39,7 +42,10 @@ function Home() {
       if (textareaRef.current === null) {
         return toast.error("텍스트 영역이 없습니다");
       }
+      setIsLoding(true);
       const data: ITranslate = await getTranslate(textareaRef.current.value);
+      await search(data.translateWords);
+      setIsLoding(false);
       setTranslateText(data.translateText);
       setTranslateWords(data.translateWords);
     } catch {
@@ -77,7 +83,13 @@ function Home() {
             </S.InputBox>
             <S.InputBox>
               <S.TranslateType>번역문</S.TranslateType>
-              <S.TextBox>{translateText}</S.TextBox>
+              {isLoading ? (
+                <S.Loading>
+                  <BeatLoader color="black" />
+                </S.Loading>
+              ) : (
+                <S.TextBox>{translateText}</S.TextBox>
+              )}
               <S.ButtomNavBox>
                 <S.ButtomNav onClick={() => handleCopy(translateText)}>
                   <S.Img src={copy} />

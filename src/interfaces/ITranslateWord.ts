@@ -1,7 +1,7 @@
 export interface ITranslateWord {
   meaning: string;
   part: string;
-  plainword: string;
+  plainWord: string;
   translateWord: string;
   translateWordLevel: number;
 }
